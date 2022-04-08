@@ -19,6 +19,7 @@ const insertGifs = response =>{
     
 const tryError = async inputValue=>{
   const response = await getRequest(inputValue)
+  
   try{
     if(!response.status === 200){
       throw new Error('Não foi possivel obter os dados ')
