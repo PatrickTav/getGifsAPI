@@ -17,16 +17,16 @@ const insertGifs = response =>{
     imageContainer.insertAdjacentElement('afterbegin', img)
 }
     
-async function tryError(inputValue) {
+const tryError = async inputValue=>{
   const response = await getRequest(inputValue)
-  try {
-    if (!response.status === 200) {
+  try{
+    if(!response.status === 200){
       throw new Error('Não foi possivel obter os dados ')
     }
 
     return insertGifs(response)
-
-  } catch (error) {
+    
+  }catch(error){
     alert(`erro: ${error.message}`)
   }
 }
